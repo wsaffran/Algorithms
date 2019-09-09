@@ -1,4 +1,4 @@
-const string = "abcabcabcc"
+const string = "aa"
 
 // with repeating characters, just not in a row
 const longsetSubstring1 = string => {
@@ -22,8 +22,13 @@ const longsetSubstring1 = string => {
 const longsetSubstring2 = string => {
   let currentTest = ""
   let currentBest = ""
+
+  if (string.length === 1) {
+    currentBest = string
+  }
+
   for (let i = 0; i < string.length; i++) {
-    let currentTest = string.charAt(i)
+    currentTest = string.charAt(i)
     for (let j = i + 1; j < string.length; j++) {
       if (!currentTest.includes(string.charAt(j))) {
         currentTest += string.charAt(j)
@@ -36,7 +41,7 @@ const longsetSubstring2 = string => {
 
     }
   }
-  console.log(currentBest);
+  console.log(currentBest, currentBest.length);
 }
 
 longsetSubstring2(string)
