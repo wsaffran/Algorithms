@@ -4,7 +4,7 @@ const k = 50
 const maximumToys = (prices, k) => {
 
   // sort prices
-  prices.sort((a,b)=>a-b)
+  prices.sort((a,b)=>a-b) // if a-b is > 0, return 1. if a-b < 0, return -1. if a-b == 0, return 0
 
   // count how maximum toys
   let result = 0
